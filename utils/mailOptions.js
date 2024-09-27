@@ -165,7 +165,7 @@ export const requestNotificationMailOptions = (name, email, ticketNumber) => {
           </p>
         
           <p class="btn">
-            <a class="button" href="https://amu-crm-backend.onrender.com/checkticketstatus">Track Issue</a>
+            <a class="button" href="https://amu-crm.vercel.app/checkticketstatus">Track Issue</a>
           </p>
         
           <p>
