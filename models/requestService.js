@@ -21,7 +21,7 @@ const RequestServiceSchema = mongoose.Schema({
   },
   description: {
     type : Object,
-    required : true
+    // required : true
   },
 });
 

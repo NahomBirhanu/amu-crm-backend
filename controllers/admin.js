@@ -75,12 +75,14 @@ export const addService = async (req, res) => {
     const { requestType, description } = req.body;
     // Find the service based on the requestType
     const service = await RequestService.findOne({requestType });
-    if(!service) throw new NotfoundError(`service with request type ${requestType} not found`);
-    
-      //  append the new description to the existing service
-      service.description = { ...service.description, ...description };
-      await service.save();
-      res.status(StatusCodes.OK).json({ success: true, service });
+    if(!service){
+      throw new NotfoundError(`service with request type ${requestType} not found`);
+    } 
+    //  append the new description to the existing service
+    service.description = { ...service.description, ...description }
+      
+   await service.save()
+    res.status(StatusCodes.OK).json({ success: true, service });
 };
 
 
